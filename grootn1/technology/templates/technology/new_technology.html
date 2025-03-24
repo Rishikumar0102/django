@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New & Upcoming AI Technologies</title>
+    <link rel="stylesheet" href="{% static 'technology/styles/new_technology.css' %}?v=1">
+</head>
+<body>
+    <header>
+        <h1>New & Upcoming AI Technologies</h1>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <section class="technology-list">
+        <div class="tech-item">
+            <img src="{% static 'technology/images/brain_chip_ai.jpg' %}" alt="Brain Chip AI">
+            <h2>Brain Chip A</h2>
+            <p1>it is most usae full </p1>
+        </div>
+
+        <div class="tech-item">
+            <img src="{% static 'technology/images/ai_edge_computing.jpg' %}" alt="AI Edge Computing">
+            <h2>AI Edge Computing</h2>
+        </div>
+
+        <div class="tech-item">
+            <img src="{% static 'technology/images/biometric_ai.jpg' %}" alt="Biometric AI">
+            <h2>Biometric AI</h2>
+        </div>
+
+        <div class="tech-item">
+            <img src="{% static 'technology/images/ai_healthcare.jpg' %}" alt="AI in Healthcare">
+            <h2>AI in Healthcare</h2>
+        </div>
+    </section>
+</body>
+</html>

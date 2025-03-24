@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Technologies</title>
+    <link rel="stylesheet" href="{% static 'technology/styles/home.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Latest AI Technologies</h1>
+        <nav>
+           
+            <a href="{% url 'new_technology' %}">New Technology</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <section class="technology-list">
+        <div class="tech-item">
+            <a  href="{% url 'technology_detail' 'groot_n1' %}">
+                <img src="{% static 'technology/images/groot_n1.jpg' %}" alt="Groot N1">
+                <h2>Groot N1</h2>
+                <p>An advanced AI model with real-time decision-making capabilities.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'ai_model_x' %}">
+                <img src="{% static 'technology/images/ai_model.jpg' %}" alt="AI Model X">
+                <h2>AI Model X</h2>
+                <p>A next-gen deep learning AI with self-learning features.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'vision_ai' %}">
+                <img src="{% static 'technology/images/vision_ai.jpg' %}" alt="Vision AI">
+                <h2>VISION AI</h2>
+                <p>AI-powered vision system for advanced image recognition and object detection.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'voice_assistant' %}">
+                <img src="{% static 'technology/images/voice_assistant.jpg' %}"  alt="AI Voice Assistant">
+                <h2>AI Voice Assistant</h2>
+                <p>A smart assistant capable of natural conversation and real-time response.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'neural_brain' %}">
+                <img src="{% static 'technology/images/neural_brain.jpg' %}" alt="Neural Brain AI">
+                <h2>Neural Brain AI</h2>
+                <p>AI mimicking human brain processing with deep learning neural networks.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'quantum_ai' %}">
+                <img src="{% static 'technology/images/quantum_ai.jpg' %}" alt="Quantum AI">
+                <h2>Quantum AI</h2>
+                <p>Combining AI and quantum computing for ultra-fast problem-solving.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'nlp_ai' %}">
+                <img src="{% static 'technology/images/nlp_ai.jpg' %}" alt="NLP AI">
+                <h2>NLP AI</h2>
+                <p>Natural Language Processing AI for human-like understanding of text and speech.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'self_driving' %}">
+                <img src="{% static 'technology/images/self_driving.jpg' %}" alt="Self-Driving AI">
+                <h2>Self-Driving AI</h2>
+                <p>AI-powered autonomous driving system for smart transportation.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'ai_robot' %}">
+                <img src="{% static 'technology/images/ai_robot.jpg' %}" alt="AI Robotics">
+                <h2>AI Robotics</h2>
+                <p>Intelligent robotic systems with AI-powered automation and learning.</p>
+            </a>
+        </div>
+
+        <div class="tech-item">
+            <a href="{% url 'technology_detail' 'cybersecurity_ai' %}">
+                <img src="{% static 'technology/images/cybersecurity_ai.jpg' %}" alt="Cybersecurity AI">
+                <h2>Cybersecurity AI</h2>
+                <p>AI-driven security system for detecting and preventing cyber threats.</p>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

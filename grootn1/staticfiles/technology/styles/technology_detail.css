@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+a:hover {
+    background: #0056b3;
+}
+
+/* Specific styles for each technology */
+.vision_ai {
+    background-color: #ffebee;
+    color: #b71c1c;
+}
+
+.neural_brain {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}
+
+.voice_assistant {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+
+.self_driving {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.quantum_ai {
+    background-color: #f3e5f5;
+    color: #6a1b9a;
+}
+
+.ai_robot {
+    background-color: #ede7f6;
+    color: #311b92;
+}
+
+.cybersecurity_ai {
+    background-color: #fbe9e7;
+    color: #bf360c;
+}
+
+.nlp_ai {
+    background-color: #e0f2f1;
+    color: #004d40;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ tech.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'technology/styles/technology_detail.css' %}">
+</head>
+<body class="{{ tech.title|lower|slugify }}">
+    <div class="container">
+        <h1>{{ tech.title }}</h1>
+        <img src="{% static tech.image %}" alt="{{ tech.title }}">
+        <p>{{ tech.description }}</p>
+        <p><strong>Description:</strong> {{ tech.description }}</p>
+        <p><strong>Inventor:</strong> {{ tech.inventor }}</p>
+        <p><strong>Purpose:</strong> {{ tech.purpose }}</p>
+        <p><strong>Usage:</strong> {{ tech.usage }}</p>
+        <a href="{% url 'home' %}">Home</a>
+    </div>
+</body>
+</html>
