@@ -18,7 +18,7 @@ body {
     width: 120%;
     height: 120%;
     background: url('/static/technology/images/login.jpg') no-repeat center center/cover;
-    animation: floatBackground 10s infinite linear; /* Reduced duration to 10s */
+    animation: floatBackground 100s infinite linear;
     z-index: -1;
 }
 

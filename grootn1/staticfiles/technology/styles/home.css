@@ -21,20 +21,61 @@ header h1 {
     color: #38bdf8;
 }
 
+/* Navigation Bar */
 nav {
-    margin-top: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Adds space between buttons */
 }
 
+/* Buttons */
 nav a {
-    color: #94a3b8;
-    text-decoration: none;
-    margin: 0 15px;
+    display: inline-block;
+    padding: 12px 24px;
     font-size: 18px;
-    transition: color 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff6b6b, #ff4757);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.6);
+    transition: all 0.4s ease-in-out;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Button Glow Animation */
+nav a::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 110%;
+    height: 110%;
+    background: radial-gradient(circle, rgba(255, 71, 87, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Hover Effects */
 nav a:hover {
-    color: #38bdf8;
+    background: linear-gradient(45deg, #ff4757, #ff6b6b);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.8);
+}
+
+/* Glowing Pulse Effect on Hover */
+nav a:hover::before {
+    opacity: 1;
+}
+
+/* Click Effect */
+nav a:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 10px rgba(255, 71, 87, 0.6);
 }
 
 /* Technology Section */
@@ -76,28 +117,15 @@ nav a:hover {
     color: #cbd5e1;
 }
 
-/* Buttons */
-button {
-    background-color: #38bdf8;
-    color: #0f172a;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-button:hover {
-    background-color: #0284c7;
-    transform: scale(1.05);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 22px;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 15px;
     }
     
     nav a {

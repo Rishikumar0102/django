@@ -5,34 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'technology/styles/signup.css' %}">
 </head>
 <body>
-    <div class="container">
+
+<!-- Floating Background Effect -->
+<div class="floating-bg"></div>
+
+<div class="signup-container">
+    <form method="POST">
+        {% csrf_token %}
         <h2>Sign Up</h2>
-        <form method="POST">
-            {% csrf_token %}
-            <div class="input-field">
-                <input type="text" name="username" required>
-                <label>Username</label>
+
+        <!-- Display messages (success/error) -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
             </div>
-            <div class="input-field">
-                <input type="email" name="email" required>
-                <label>Email</label>
+        {% endif %}
+
+        <!-- Display form errors -->
+        {% if form.errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for field, errors in form.errors.items %}
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
             </div>
-            <div class="input-field">
-                <input type="password" name="password1" required>
-                <label>Password</label>
-            </div>
-            <div class="input-field">
-                <input type="password" name="password2" required>
-                <label>Confirm Password</label>
-            </div>
-            <button type="submit">Sign Up</button>
-        </form>
-        <div class="switch-auth">
-            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        {% endif %}
+
+        <div class="input-field">
+            <label>Username</label>
+            <input type="text" name="username" required>
         </div>
-    </div>
+
+        <div class="input-field">
+            <label>Email</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div class="input-field">
+            <label>Password</label>
+            <input type="password" name="password1" required>
+        </div>
+
+        <div class="input-field">
+            <label>Re-enter Password</label>
+            <input type="password" name="password2" required>
+        </div>
+
+        <button type="submit">Sign Up</button>
+
+        <p class="login-link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </form>
+</div>
+
 </body>
 </html>

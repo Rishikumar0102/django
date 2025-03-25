@@ -1,139 +1,109 @@
-/* General Page Styling */
+/* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
     background: url('../images/new_back.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
-    color: white;
+    color: #fff;
     text-align: center;
-    position: relative;
-}
-
-/* Floating AI Icons (Optional, for a Futuristic Feel) */
-.floating-icons img {
-    position: absolute;
-    width: 80px;
-    opacity: 0.3;
-    animation: float 5s infinite ease-in-out alternate;
-}
-
-.floating-icons img:nth-child(1) {
-    top: 10%;
-    left: 5%;
-    animation-delay: 1s;
-}
-
-.floating-icons img:nth-child(2) {
-    top: 30%;
-    right: 10%;
-    animation-delay: 2s;
-}
-
-.floating-icons img:nth-child(3) {
-    bottom: 15%;
-    left: 20%;
-    animation-delay: 3s;
-}
-
-.floating-icons img:nth-child(4) {
-    bottom: 25%;
-    right: 30%;
-    animation-delay: 4s;
-}
-
-/* Floating Animation */
-@keyframes float {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-15px);
-    }
 }
 
 /* Header Styling */
 header {
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(120deg, #273c75, #192a56);
     padding: 20px;
     font-size: 24px;
     font-weight: bold;
+    color: #fff;
     text-transform: uppercase;
-    border-bottom: 3px solid #ffd700;
 }
 
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: #ffd700;
-    text-decoration: none;
-    margin: 15px;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #ff4500;
-}
-
-/* Technology Section */
-.technology-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px auto;
-    max-width: 1200px;
-}
-
-/* Technology Card */
-.tech-item {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    width: 300px;
-    margin: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-/* Hover Effects */
-.tech-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0px 8px 20px rgba(255, 215, 0, 0.6);
-}
-
-/* Floating Images */
-.tech-item img {
+/* 360° Carousel */
+.carousel-container {
+    perspective: 1000px;
+    margin-top: 50px;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 3px solid #ffd700;
-    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    overflow: hidden;
 }
 
-.tech-item:hover img {
+.carousel {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate360 15s infinite linear;
+}
+
+.tech-item {
+    position: absolute;
+    width: 180px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.5s;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Positioning Items in a Circle */
+.tech-item:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+.tech-item:nth-child(2) { transform: rotateY(90deg) translateZ(300px); }
+.tech-item:nth-child(3) { transform: rotateY(180deg) translateZ(300px); }
+.tech-item:nth-child(4) { transform: rotateY(270deg) translateZ(300px); }
+
+/* Floating Animation */
+@keyframes rotate360 {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/* Hover Effect */
+.tech-item:hover {
     transform: scale(1.1);
 }
 
-/* Technology Title */
-.tech-item h2 {
-    font-size: 22px;
-    margin-top: 15px;
-    color: #ffd700;
-    font-weight: bold;
-    text-transform: uppercase;
+/* Image inside Tech Items */
+.tech-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ffdd57;
+}
+/* Navigation Bar */
+nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Adds space between buttons */
 }
 
-/* Technology Description */
-.tech-item p {
-    font-size: 16px;
-    color: #ddd;
-    margin-top: 10px;
-    line-height: 1.5;
+/* Buttons */
+nav a {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff6b6b, #ff4757);
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.6);
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 1px;
+}
+
+/* Hover Effects */
+nav a:hover {
+    background: linear-gradient(45deg, #ff4757, #ff6b6b);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.8);
 }

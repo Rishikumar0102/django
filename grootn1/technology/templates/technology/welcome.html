@@ -9,10 +9,12 @@
 </head>
 <body>
     <div class="welcome-container">
-        <img src="{% static 'technology/images/ai_background.jpg' %}"/img>
         <h1>Welcome to the Future of AI</h1>
         <p>Explore the latest advancements in AI technology.</p>
-        <a href="{% url 'home' %}" class="enter-btn">Enter AI World</a>
+
+        <!-- Button redirects to login page -->
+        <a href="{% url 'login' %}" class="enter-btn">Enter AI World</a>
+
     </div>
 </body>
 </html>
