@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
 from .forms import ContactForm
 
 # Sample technology data (You can later fetch this from a database)
@@ -104,14 +106,37 @@ def technology_detail(request, tech_name):
     else:
         return render(request, 'technology/not_found.html', status=404)
 
-
 def contact_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the message to the database
-            return redirect('contact')  # Redirect to the contact page after submission
+            form.save()
+            return redirect('contact')
     else:
         form = ContactForm()
-
     return render(request, 'technology/contact.html', {'form': form})
+
+# Signup View
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')  # Redirect to home after signup
+    else:
+        form = UserCreationForm()
+    return render(request, 'technology/signup.html', {'form': form})
+
+# Login View
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            return render(request, 'technology/login.html', {'error': 'Invalid Credentials'})
+    return render(request, 'technology/login.html')
